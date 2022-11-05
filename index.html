@@ -19,7 +19,7 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
 
   <span class="w3-bar-item w3-left">Generate your QR codes</span>
   <div class="w3-bar w3-black">
-    <a href="#" class="w3-bar-item w3-button">QR Codes</a>
+    <a href="#" class="w3-bar-item w3-button" onclick="openQRCode('QRDiv')">QR Codes</a>
     <a href="#" class="w3-bar-item w3-button">FAQ</a>
     <a href="#" class="w3-bar-item w3-button">Why US</a>
     <a href="#" class="w3-bar-item w3-button">Product</a>
@@ -29,10 +29,38 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
     <button class="w3-bar-item w3-button w3-hover-none w3-hover-text-light-grey" onclick="w3_open();"><i class="fa fa-bars"></i> Signup</button>
 
   </div>
+
+
+  <div id="QRDiv" class="w3-container w3-hide">
+    <h4>Generate QR Code</h4>
+    <button class="w3-bar-item w3-button w3-hover-none w3-hover-text-light-grey" onclick=""><i class=""></i> QRCode </button>
+  </div>
+
+  <div class="wrapper">
+          <header>
+              <h1>QR Code Generator</h1>
+              <p>Paste URL to generate a QR code</p>
+          </header>
+          <div class="form">
+              <input type="text" placeholder="Enter URL">
+              <button>Generate QR Code</button>
+          </div>
+          <div class="qr-code">
+              <img src="" alt="">
+          </div>
+      </div>
 </div>
 
-
+<script>
+function openQRCode(id) {
+  var x = document.getElementById(id);
+  if (x.className.indexOf("w3-show") == -1) {
+    x.className += " w3-show";
+  } else {
+    x.className = x.className.replace(" w3-show", "");
+  }
+}
 </script>
-
+  <script src="script.js"></script>
 </body>
 </html>
